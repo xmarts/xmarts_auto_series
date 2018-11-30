@@ -1,0 +1,81 @@
+<odoo>
+  <data>
+    <record id="xmarts_auto_series_add_button" model="ir.ui.view">
+      <field name="name">xmarts_auto_series_add_button</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//header" position="inside">
+          <button name="generar_series" string="Asignar Series/Lotes" type="object"  class="btn-primary" attrs="{'invisible': [('picking_type_code','!=','incoming')]}"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="xmarts_auto_series_add_ref_company" model="ir.ui.view">
+      <field name="name">xmarts_auto_series_add_ref_company</field>
+      <field name="model">res.company</field>
+      <field name="inherit_id" ref="base.view_company_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='report_header']" position="after">
+          <field name="int_ref"/>
+        </xpath>
+      </field>
+    </record>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="xmarts_auto_series.list">
+      <field name="name">xmarts_auto_series list</field>
+      <field name="model">xmarts_auto_series.xmarts_auto_series</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="xmarts_auto_series.action_window">
+      <field name="name">xmarts_auto_series window</field>
+      <field name="res_model">xmarts_auto_series.xmarts_auto_series</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="xmarts_auto_series.action_server">
+      <field name="name">xmarts_auto_series server</field>
+      <field name="model_id" ref="model_xmarts_auto_series_xmarts_auto_series"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="xmarts_auto_series" id="xmarts_auto_series.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="xmarts_auto_series.menu_1" parent="xmarts_auto_series.menu_root"/>
+    <menuitem name="Menu 2" id="xmarts_auto_series.menu_2" parent="xmarts_auto_series.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="xmarts_auto_series.menu_1_list" parent="xmarts_auto_series.menu_1"
+              action="xmarts_auto_series.action_window"/>
+    <menuitem name="Server to list" id="xmarts_auto_series" parent="xmarts_auto_series.menu_2"
+              action="xmarts_auto_series.action_server"/>
+    -->
+  </data>
+</odoo>
