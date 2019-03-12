@@ -16,7 +16,8 @@ class StockPickingSeries(models.Model):
 					cont = cont + 1
 					part = str(self.partner_id.ref)
 					pro = str(ml.product_id.default_code).upper()
-					lo = str(pro[0:10]).zfill(10) + str(part[0:5]).zfill(5) + str(self.purchase_id.id).zfill(5) + str(cont).zfill(3)
+					tien = str(self.company_id.numero_tienda)
+					lo = str(tien[0:2]).zfill(2) + str(pro[0:10]).zfill(10) + str(part[0:5]).zfill(5) + str(self.purchase_id.id).zfill(5) + str(cont).zfill(3)
 					mli.lot_name = lo
 
 
@@ -24,3 +25,4 @@ class ResCompany(models.Model):
 	_inherit = "res.company"
 
 	int_ref = fields.Char(string="Referencia interna")
+	numero_tienda=fields.Char(string='Numero de tienda')

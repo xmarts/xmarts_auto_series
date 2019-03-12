@@ -18,6 +18,7 @@
       <field name="arch" type="xml">
         <xpath expr="//field[@name='report_header']" position="after">
           <field name="int_ref"/>
+          <field name="numero_tienda"/>
         </xpath>
       </field>
     </record>
