@@ -10,7 +10,7 @@
         *Agrega campo de referencia interna en compañia
     """,
 
-    'author': "Xmarts, Pablo Osorio",
+    'author': "Xmarts, Pablo Osorio Gama",
     'website': "http://www.xmarts.com",
 
     'category': 'Uncategorized',
